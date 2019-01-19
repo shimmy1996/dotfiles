@@ -1,5 +1,7 @@
-# # Keyboard settings.
-# export XKB_DEFAULT_OPTIONS=ctrl:swapcaps
+# Keyboard settings.
+if [ `hostname` == "bluebear" ]; then
+    export XKB_DEFAULT_OPTIONS=ctrl:swapcaps
+fi
 
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':')"
