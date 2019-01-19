@@ -6,7 +6,15 @@
 
 # Config files.
 !.config
-!.config/*
-!.config/*/*
+!.config/gtk-3.0
+!.config/gtk-3.0/*
+!.config/sway
+!.config/sway/*
+!.config/mako
+!.config/mako/*
+!.config/rofi
+!.config/rofi/*
+!.config/rofi-pass
+!.config/rofi-pass/*
 !.profile
 !.zprofile
