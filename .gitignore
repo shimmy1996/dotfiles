@@ -1,0 +1,10 @@
+*
+
+# Git files.
+!.gitignore
+!README.org
+
+# Config files.
+!.config
+!.config/*
+!.config/*/*

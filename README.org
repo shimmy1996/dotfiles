@@ -1,0 +1,4 @@
+#+Title: Core Configuration Files
+#+Author: Shimmy Xu
+
+An archive of core configuration files necessary to replicate the fabled Doomsday Mobility Device.
