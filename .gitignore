@@ -16,5 +16,7 @@
 !.config/rofi/*
 !.config/rofi-pass
 !.config/rofi-pass/*
+!.scripts
+!.scripts/*
 !.profile
 !.zprofile
