@@ -1,0 +1,7 @@
+[user]
+	name = Shimmy Xu
+	email = shimmy.xu@shimmy1996.com
+[commit]
+	gpgsign = true
+[credential]
+        helper = cache
