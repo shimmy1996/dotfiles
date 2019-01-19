@@ -13,6 +13,8 @@ putgitrepo() { # Downlods a gitrepo $1 and places the files in $2 only overwriti
         sudo -u "$name" cp -rfT "$dir"/gitrepo "$2"
     sudo -u "$name" rm -f "$2/README.org"
     sudo -u "$name" rm -f "$2/LICENCE"
+    sudo -u "$name" chmod -R +x "$2/.scripts/*"
+    sudo -u "$name" chmod -R +x "$2/.profile"
 }
 
 # Install the dotfiles in the user's home directory
