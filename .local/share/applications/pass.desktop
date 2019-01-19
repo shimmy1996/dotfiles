@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Pass
+GenericName=Password Manager
+Comment=The Standard Unix Password Manager
+Exec=rofi-pass
+Icon=lastpass
+Type=Application
+Terminal=false
+Categories=Utility;
+Keywords=Password;
+Path=
+StartupNotify=false
