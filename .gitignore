@@ -24,9 +24,14 @@
 !.config/sway
 !.config/sway/*
 !.config/sway/*
+
+# Scripts and more.
 !.local
 !.local/bin
 !.local/bin/*
 !.local/bin/i3blocks/*
+!.local/share
+!.local/share/applications
+!.local/share/applications/emacs.desktop
 !.profile
 !.zprofile
