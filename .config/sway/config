@@ -14,7 +14,7 @@ set $gaps_outer 0
 set $term env WINIT_HIDPI_FACTOR=1.0 WAYLAND_DISPLAY= alacritty
 set $menu rofi -i -show drun
 set $clipboard rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-set $screenlocker swaylock -c {$base0D}80 -u
+set $screenlocker swaylock -c 85ad8580 -u
 set $screenshot swaygrab
 set $networkmenu $term -e nmtui
 ## System Commands
