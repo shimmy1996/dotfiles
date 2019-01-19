@@ -1,7 +1,7 @@
-#+Title: Core Configuration Files
+#+Title: BIGMOD Core Configuration Files
 #+Author: Shimmy Xu
 
-An archive of core configuration files necessary to replicate the fabled Doomsday Mobility Device.
+An archive of core configuration files for the fabled Bipedal Inter-Galactic Mass Obliteration Device (BIGMOD).
 
 * Dependencies
 | =pass=                  |
