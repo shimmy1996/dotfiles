@@ -9,3 +9,4 @@ An archive of core configuration files necessary to replicate the fabled Doomsda
 | Iosevka SS09 Font       |
 | Numix Circle Icon Theme |
 | Oxygen Sans Font        |
+| Adapta GTK Theme        |
