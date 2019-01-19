@@ -9,5 +9,10 @@ export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
 
+# Preferred applications
+export BROWSER="firefox"
+export EDITOR="nvim"
+export VISUAL="emacsclient -c -a emacs"
+
 # # Auto start tbsm after login on first two VTs.
 # [[ $XDG_VTNR -le 2 ]] && tbsm

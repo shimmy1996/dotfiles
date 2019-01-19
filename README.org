@@ -3,7 +3,8 @@
 
 An archive of core configuration files for the fabled Bipedal Inter-Galactic Mass Obliteration Device (BIGMOD).
 
-* Dependencies
+* Functional Dependencies
+Missing those may cause system to behave funny.
 | =pass=                  |
 | =rofi-pass=             |
 | =rofi=                  |
@@ -13,3 +14,10 @@ An archive of core configuration files for the fabled Bipedal Inter-Galactic Mas
 | Iosevka SS09 Font       |
 | Numix Circle Icon Theme |
 | Oxygen Sans Font        |
+
+* Applications
+Those involved in the settings, but not crucial.
+| =nvim=    |
+| =emacs=   |
+| =fcitx=   |
+| =firefox= |
