@@ -5,6 +5,9 @@ An archive of core configuration files for the fabled Bipedal Inter-Galactic Mas
 
 * Functional Dependencies
 Missing those may cause system to behave funny.
+| =i3blocks=              |
+| =acpi=                  |
+| =alsa-utils=            |
 | =alacritty=             |
 | =pass=                  |
 | =rofi-pass=             |

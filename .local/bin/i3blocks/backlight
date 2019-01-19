@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+BACKLIGHT_LEVEL=$(xbacklight -get)
+
+echo "$LABEL$BACKLIGHT_LEVEL"

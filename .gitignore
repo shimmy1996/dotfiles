@@ -10,6 +10,8 @@
 !.config/alacritty/*
 !.config/gtk-3.0
 !.config/gtk-3.0/*
+!.config/i3blocks
+!.config/i3blocks/*
 !.config/sway
 !.config/sway/*
 !.config/mako
@@ -21,5 +23,6 @@
 !.local
 !.local/bin
 !.local/bin/*
+!.local/bin/i3blocks/*
 !.profile
 !.zprofile
