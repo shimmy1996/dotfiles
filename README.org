@@ -4,9 +4,12 @@
 An archive of core configuration files necessary to replicate the fabled Doomsday Mobility Device.
 
 * Dependencies
+| =pass=                  |
+| =rofi-pass=             |
+| =rofi=                  |
 | =tbsm= Session Chooser  |
 | =zsh=                   |
+| Adapta GTK Theme        |
 | Iosevka SS09 Font       |
 | Numix Circle Icon Theme |
 | Oxygen Sans Font        |
-| Adapta GTK Theme        |
