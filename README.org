@@ -2,3 +2,10 @@
 #+Author: Shimmy Xu
 
 An archive of core configuration files necessary to replicate the fabled Doomsday Mobility Device.
+
+* Dependencies
+| =tbsm= Session Chooser  |
+| =zsh=                   |
+| Iosevka SS09 Font       |
+| Numix Circle Icon Theme |
+| Oxygen Sans Font        |
