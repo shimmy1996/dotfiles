@@ -18,7 +18,8 @@
 !.config/rofi/*
 !.config/rofi-pass
 !.config/rofi-pass/*
-!.scripts
-!.scripts/*
+!.local
+!.local/bin
+!.local/bin/*
 !.profile
 !.zprofile

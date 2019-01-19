@@ -2,7 +2,7 @@
 # export XKB_DEFAULT_OPTIONS=ctrl:swapcaps
 
 # Adds `~/.scripts` and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':')"
 
 # Fcitx fixes
 export XMODIFIERS=@im=fcitx
