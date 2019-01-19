@@ -114,9 +114,6 @@ client.background       $base07
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your wayland session)
-    bindsym $mod+Shift+e exit
-
 #
 # Moving around:
 #
@@ -238,9 +235,11 @@ bindsym $mod+r mode "resize"
 #
 # System power:
 #
-set $mode_power system: [h]ibernate [r]eboot [s]hutdown
+set $mode_power system: [h]ibernate [l]ogout [r]eboot [s]hutdown
 mode "$mode_power" {
+    # exit sway (logs you out of your wayland session)
     bindsym h mode "default"; exec $screenlocker; exec $hibernate
+    bindsym l mode "default"; exit
     bindsym r mode "default"; exec $reboot
     bindsym s mode "default"; exec $shutdown
     # return to default mode
