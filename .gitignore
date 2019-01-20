@@ -17,6 +17,8 @@
 !.config/i3blocks/*
 !.config/mako
 !.config/mako/*
+!.config/mpd
+!.config/mpd/mpd.conf
 !.config/rofi
 !.config/rofi-pass
 !.config/rofi-pass/*
