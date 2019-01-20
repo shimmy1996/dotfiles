@@ -21,8 +21,13 @@
 !.config/rofi-pass/*
 !.config/rofi/*
 !.config/sway
-!.config/sway
 !.config/sway/*
+!.config/systemd
+!.config/systemd/user
+!.config/systemd/user/greenclip.service
+!.config/systemd/user/emacs.service.d
+!.config/systemd/user/emacs.service.d/override.conf
+!.config/systemd/
 !.config/sway/*
 
 # Scripts and more.
