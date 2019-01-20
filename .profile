@@ -1,5 +1,5 @@
 # Keyboard settings.
-if [ `hostname` == "bluebear" ]; then
+if [[ `hostname` == "bluebear" ]]; then
     export XKB_DEFAULT_OPTIONS=ctrl:swapcaps
 fi
 
