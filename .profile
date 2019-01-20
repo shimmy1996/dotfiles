@@ -14,7 +14,7 @@ export GTK_IM_MODULE=fcitx
 # Preferred applications
 export BROWSER="firefox"
 export EDITOR="nvim"
-export VISUAL="emacsclient -c -a emacs"
+export VISUAL="emacsclient"
 
 # Auto start tbsm after login on first two VTs.
 [[ $XDG_VTNR -le 2 ]] && tbsm
