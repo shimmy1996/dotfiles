@@ -2,7 +2,7 @@
 
 # Git files.
 !.gitignore
-!README.org
+!.README.org
 
 # Config files.
 !.config
