@@ -273,6 +273,5 @@ include /etc/sway/config.d/*
 
 ### Startup Applications
 exec --no-startup-id mako
-exec --no-startup-id greenclip daemon
 exec --no-startup-id dropbox
 exec --no-startup-id fcitx -d
