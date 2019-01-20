@@ -17,6 +17,8 @@
 !.config/i3blocks/*
 !.config/mako
 !.config/mako/*
+!.config/tbsm
+!.config/tbsm/tbsm.conf
 !.config/mpd
 !.config/mpd/mpd.conf
 !.config/rofi
