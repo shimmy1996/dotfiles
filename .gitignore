@@ -44,4 +44,5 @@
 !.local/share/applications/emacs.desktop
 !.local/share/applications/pass.desktop
 !.profile
+!.xprofile
 !.zprofile
