@@ -33,8 +33,23 @@ font pango:Iosevka SS09 12
 gaps inner $gaps_inner
 gaps outer $gaps_outer
 default_border pixel 2
-## Color Scheme
-include colorscheme
+## Color Scheme (gruvbox-dark-pale)
+set $base00 #262626
+set $base01 #3a3a3a
+set $base02 #4e4e4e
+set $base03 #8a8a8a
+set $base04 #949494
+set $base05 #dab997
+set $base06 #d5c4a1
+set $base07 #ebdbb2
+set $base08 #d75f5f
+set $base09 #ff8700
+set $base0A #ffaf00
+set $base0B #afaf00
+set $base0C #85ad85
+set $base0D #83adad
+set $base0E #d485ad
+set $base0F #d65d0e
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base0D $base00 $base0D $base0D
@@ -76,30 +91,30 @@ exec_always ~/.local/bin/sway/import-gsettings \
 #
 # Basics:
     # lock screen
-    bindsym $mod+Escape exec $screenlocker
+    bindsym $mod+Escape exec --no-startup-id $screenlocker
 
     # start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec --no-startup-id $term
 
     # kill focused window
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
-    bindsym XF86Search exec $menu
+    bindsym $mod+d exec --no-startup-id $menu
+    bindsym XF86Search exec --no-startup-id $menu
 
     # screenshot
-    bindsym Print exec $screenshot
+    bindsym Print exec --no-startup-id $screenshot
 
     # view clipbord
-    bindsym $mod+Shift+v exec $clipboard
+    bindsym $mod+Shift+v exec --no-startup-id $clipboard
 
     # network
-    bindsym $mod+Shift+w exec $networkmenu
+    bindsym $mod+Shift+w exec --no-startup-id $networkmenu
 
     # backlight
-    bindsym XF86MonBrightnessUp exec xbacklight -ctrl intel_backlight -inc 10 && pkill -RTMIN+11 i3blocks
-    bindsym XF86MonBrightnessDown exec xbacklight -ctrl intel_backlight -dec 10 && pkill -RTMIN+11 i3blocks
+    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -ctrl intel_backlight -inc 10 && pkill -RTMIN+11 i3blocks
+    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -ctrl intel_backlight -dec 10 && pkill -RTMIN+11 i3blocks
 
     # volume
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
@@ -112,8 +127,8 @@ exec_always ~/.local/bin/sway/import-gsettings \
     bindsym XF86AudioNext exec --no-startup-id mpc next && pkill -RTMIN+12 i3blocks
 
     # emoji and unicode character picker
-    bindsym $mod+u exec rofimoji
-    bindsym $mod+Shift+u exec unipicker --command "rofi -dmenu" --copy
+    bindsym $mod+u exec --no-startup-id rofimoji
+    bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
