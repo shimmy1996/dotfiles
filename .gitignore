@@ -36,8 +36,6 @@
 !.profile
 !.bash_profile
 !.bashrc
-!.xprofile
-!.zprofile
 
 # Scripts and more.
 !.local
