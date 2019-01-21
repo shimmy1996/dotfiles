@@ -33,6 +33,11 @@
 !.config/systemd/user/emacs.service.d
 !.config/systemd/user/emacs.service.d/override.conf
 !.config/systemd/user/greenclip.service
+!.profile
+!.bash_profile
+!.bashrc
+!.xprofile
+!.zprofile
 
 # Scripts and more.
 !.local
@@ -43,6 +48,3 @@
 !.local/share/applications
 !.local/share/applications/emacs.desktop
 !.local/share/applications/pass.desktop
-!.profile
-!.xprofile
-!.zprofile
