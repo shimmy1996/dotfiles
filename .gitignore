@@ -44,6 +44,7 @@
 !.local/bin
 !.local/bin/*
 !.local/bin/i3blocks/*
+!.local/bin/sway/*
 !.local/share
 !.local/share/applications
 !.local/share/applications/emacs.desktop
