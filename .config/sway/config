@@ -32,7 +32,7 @@ font pango:Iosevka SS09 12
 ## Window Style
 gaps inner $gaps_inner
 gaps outer $gaps_outer
-new_window pixel 2
+default_border pixel 2
 ## Color Scheme
 include colorscheme
 # Basic color configuration using the Base16 variables for windows and borders.
