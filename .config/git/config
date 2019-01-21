@@ -4,4 +4,4 @@
 [commit]
 	gpgsign = true
 [credential]
-        helper = cache
+	helper = cache --timeout=7200
