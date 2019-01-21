@@ -7,8 +7,8 @@ filter() {
 
 case $BLOCK_BUTTON in
     1) mpc status | filter && setsid "$TERMINAL" -e ncmpcpp & ;;  # left click, bring up player
-    2) mpc toggle | filter ;;   # left click, nothing
-    3) mpc status | filter && pgrep -x dunst >/dev/null && notify-send "<b>🎵 Music module:</b>
+    2) mpc toggle | filter ;;   # left click, nothing && pgrep -x dunst >/dev/null
+    3) mpc status | filter && notify-send "🎵 Music module:
 - Shows mpd song playing.
 - Italic when paused.
 - Left click opens ncmpcpp.
