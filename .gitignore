@@ -3,6 +3,7 @@
 # Git files.
 !.gitignore
 !.README.org
+!**.gitkeep
 
 # Config files.
 !.config
@@ -20,6 +21,7 @@
 !.config/tbsm
 !.config/tbsm/tbsm.conf
 !.config/mpd
+!.config/mpd/playlists
 !.config/mpd/mpd.conf
 !.config/rofi
 !.config/rofi-pass
