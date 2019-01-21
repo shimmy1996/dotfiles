@@ -11,7 +11,6 @@ set $right l
 set $gaps_inner 10
 set $gaps_outer 0
 ## Applications
-set $term env WINIT_HIDPI_FACTOR=1.0 WAYLAND_DISPLAY= alacritty
 set $menu rofi -i -show drun
 set $clipboard rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 set $screenlocker swaylock -c 85ad8580 -u
@@ -94,7 +93,7 @@ exec_always ~/.local/bin/sway/import-gsettings \
     bindsym $mod+Escape exec --no-startup-id $screenlocker
 
     # start a terminal
-    bindsym $mod+Return exec --no-startup-id $term
+    bindsym $mod+Return exec --no-startup-id ~/.local/bin/sway/launch-terminal
 
     # kill focused window
     bindsym $mod+Shift+q kill

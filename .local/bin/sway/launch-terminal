@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Adds special environment variables when starting terminal.
+
+if [[ $XDG_SESSION_TYPE -eq "wayland" ]]; then
+    exec env WINIT_HIDPI_FACTOR=1.0 WAYLAND_DISPLAY= $TERMINAL
+else
+    exec $TERMINAL
+fi
