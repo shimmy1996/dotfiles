@@ -6,6 +6,8 @@
 !**.gitkeep
 
 # Config files.
+!.bash_profile
+!.bashrc
 !.config
 !.config/alacritty
 !.config/alacritty/*
@@ -18,11 +20,9 @@
 !.config/i3blocks/*
 !.config/mako
 !.config/mako/*
-!.config/tbsm
-!.config/tbsm/tbsm.conf
 !.config/mpd
-!.config/mpd/playlists
 !.config/mpd/mpd.conf
+!.config/mpd/playlists
 !.config/rofi
 !.config/rofi-pass
 !.config/rofi-pass/*
@@ -35,9 +35,9 @@
 !.config/systemd/user/emacs.service.d
 !.config/systemd/user/emacs.service.d/override.conf
 !.config/systemd/user/greenclip.service
+!.config/tbsm
+!.config/tbsm/tbsm.conf
 !.profile
-!.bash_profile
-!.bashrc
 
 # Scripts and more.
 !.local
