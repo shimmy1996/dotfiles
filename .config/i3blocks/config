@@ -29,6 +29,12 @@ command=~/.local/bin/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[music]
+markup=pango
+label=BGM:
+interval=5
+signal=12
+
 [ssid]
 label=NWK:
 interval=5

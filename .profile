@@ -14,6 +14,12 @@ export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
 
 # Preferred applications
+if [[ `hostname` == "bluebear" ]]; then
+    # Wayland fix.
+    export TERMINAL=env WINIT_HIDPI_FACTOR=1.0 WAYLAND_DISPLAY= alacritty
+else
+    export TERMINAL=alacritty
+fi
 export BROWSER="firefox"
 export EDITOR="emacsclient"
 export VISUAL="emacsclient"
