@@ -11,6 +11,8 @@
 !.config
 !.config/alacritty
 !.config/alacritty/*
+!.config/dunst
+!.config/dunst/*
 !.config/git
 !.config/git/*
 !.config/greenclip.cfg
