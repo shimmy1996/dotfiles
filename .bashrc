@@ -9,4 +9,4 @@ alias ll='ls -l'
 alias la='ll -a'
 
 # Prompt
-PS1='\[$(tput setaf 8)\][\t] \[$(tput setaf 15)\]\u@\h: \[$(tput setaf 4)\]\w \n\[$(tput setaf 2)\]\$\[$(tput sgr0)\] '
+PS1='\n\[$(tput setaf 6)\][\t] \[$(tput setaf 7)\]\u@\h: \[$(tput setaf 4)\]\w\n\[$(tput setaf 4)\]\[$(tput bold)\]\$\[$(tput sgr0)\] '
