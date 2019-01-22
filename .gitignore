@@ -22,6 +22,8 @@
 !.config/i3/*
 !.config/i3blocks
 !.config/i3blocks/*
+!.config/lf
+!.config/lf/*
 !.config/mako
 !.config/mako/*
 !.config/mpd
