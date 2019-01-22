@@ -79,6 +79,11 @@ bar {
         binding_mode        $base00 $base0A $base00
     }
 }
+## Fibonacci splitting
+# Start vertical.
+default_orientation vertical
+# Toggle split at each new window.
+for_window [class="^"] split toggle
 
 ### Key bindings
 #
@@ -89,8 +94,8 @@ bar {
     # start a terminal
     bindsym $mod+Return exec --no-startup-id ~/.local/bin/sway/launch-terminal
 
-    # kill focused window
-    bindsym $mod+Shift+q kill
+    # kill focused window, remember to toggle split back
+    bindsym $mod+q split toggle; kill
 
     # start your launcher
     bindsym $mod+d exec --no-startup-id $menu
