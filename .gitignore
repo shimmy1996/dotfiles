@@ -3,6 +3,7 @@
 # Git files.
 !.gitignore
 !.README.org
+!.LICENSE
 !**.gitkeep
 
 # Config files.
