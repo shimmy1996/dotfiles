@@ -1,2 +1,6 @@
-set recolor-lightcolor "#262626"
+set highlight-color "#afaf00"
 set recolor-darkcolor "#dab997"
+set recolor-lightcolor "#262626"
+set selection-clipboard clipboard
+set statusbar-home-tilde true
+set window-title-basename true
