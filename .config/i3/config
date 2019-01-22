@@ -1,7 +1,7 @@
 # i3 config file (v4)
 
 ### Variables
-## Window manager
+## Window Manager
 # Leading modifier key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys.
@@ -9,7 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Default gaps sizes.
+# Default gap sizes.
 set $gaps_inner 10
 set $gaps_outer 0
 ## Applications
@@ -17,7 +17,8 @@ set $menu rofi -i -show drun
 set $clipboard rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 set $screenlocker swaylock -c 85ad8580 -u
 set $screenshot swaygrab
-set $networkmenu $term -e nmtui
+set $networkmenu $TERMINAL -e nmtui
+set $file_manager $TERMINAL -e lf
 ## System Commands
 set $hibernate systemctl suspend
 set $reboot systemctl reboot
@@ -28,7 +29,7 @@ set $background ~/.config/background.png
 ### Aesthetics
 ## Background
 exec --no-startup-id feh --bg-fill $background
-## transparency under X
+# Use compton for transparency under X.
 exec --no-startup-id compton
 ## Fonts
 font pango:Iosevka SS09 12
@@ -61,28 +62,23 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+## Status Bar
+bar {
+    position top
+    status_command i3blocks
+    colors {
+        background $base00
+        separator  $base01
+        statusline $base04
 
-### Output Configuration
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
+    }
+}
 
 ### Key bindings
 #
@@ -104,24 +100,30 @@ client.background       $base07
     bindsym Print exec --no-startup-id $screenshot
 
     # view clipbord
-    bindsym $mod+Shift+v exec --no-startup-id $clipboard
+    bindsym $mod+v exec --no-startup-id $clipboard
 
     # network
     bindsym $mod+Shift+w exec --no-startup-id $networkmenu
-
-    # backlight
-    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -ctrl intel_backlight -inc 10 && pkill -RTMIN+11 i3blocks
-    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -ctrl intel_backlight -dec 10 && pkill -RTMIN+11 i3blocks
 
     # volume
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
     bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
     bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
+    # backlight
+    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -ctrl intel_backlight -inc 10 && pkill -RTMIN+11 i3blocks
+    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -ctrl intel_backlight -dec 10 && pkill -RTMIN+11 i3blocks
+
     # music control
     bindsym XF86AudioPlay exec --no-startup-id mpc toggle && pkill -RTMIN+12 i3blocks
     bindsym XF86AudioPrev exec --no-startup-id mpc prev && pkill -RTMIN+12 i3blocks
     bindsym XF86AudioNext exec --no-startup-id mpc next && pkill -RTMIN+12 i3blocks
+
+    # file manager
+    bindsym $mod+m exec --no-startup-id $file_manager
+
+    # Emacs
+    bindsym $mod+c exec --no-startup-id emacsclient -c -a emacs
 
     # emoji and unicode character picker
     bindsym $mod+u exec --no-startup-id rofimoji
@@ -175,6 +177,7 @@ client.background       $base07
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
+
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -186,8 +189,11 @@ client.background       $base07
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
+    # move between workspace
+    bindsym $mod+comma workspace prev
+    bindsym $mod+period workspace next
+
 #
 # Layout stuff:
 #
@@ -270,27 +276,6 @@ mode "$mode_power" {
     bindsym Escape mode "default"
 }
 bindsym $mod+p mode "$mode_power"
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-    status_command i3blocks
-    colors {
-        background $base00
-        separator  $base01
-        statusline $base04
-
-        # State             Border  BG      Text
-        focused_workspace   $base05 $base0D $base00
-        active_workspace    $base05 $base03 $base00
-        inactive_workspace  $base03 $base01 $base05
-        urgent_workspace    $base08 $base08 $base00
-        binding_mode        $base00 $base0A $base00
-    }
-}
 
 ### Startup Applications
 exec --no-startup-id dunst
