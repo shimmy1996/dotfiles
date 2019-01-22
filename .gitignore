@@ -38,7 +38,8 @@
 !.config/systemd/user
 !.config/systemd/user/emacs.service.d
 !.config/systemd/user/emacs.service.d/override.conf
-!.config/systemd/user/greenclip.service
+!.config/zathura
+!.config/zathura/*
 !.config/tbsm
 !.config/tbsm/tbsm.conf
 !.profile
