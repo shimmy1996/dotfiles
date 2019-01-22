@@ -43,6 +43,7 @@ map <c-y> paste
 cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
+        application/pdf) nohup zathura $fx > /dev/null 2> /dev/null &;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
