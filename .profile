@@ -6,7 +6,7 @@ if [[ `hostname` == "bluebear" ]]; then
 fi
 
 # Add `~/.local/bin/` to path.
-export PATH="$PATH:$(echo "$HOME/.local/bin/" | cut -f2 | tr '\n' ':')"
+export PATH=$HOME/.local/bin/:$PATH
 
 # Fcitx fixes
 export XMODIFIERS=@im=fcitx
