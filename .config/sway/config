@@ -1,6 +1,8 @@
+## Prevent dunst from being spawned.
+exec --no-startup-id mako
+
 include ~/.config/i3/config
 
-### Aesthetics
 ## Background
 output * bg $background stretch
 ## GTK Settings (wayland specific)

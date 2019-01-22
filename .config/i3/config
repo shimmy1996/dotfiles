@@ -293,7 +293,7 @@ bar {
 }
 
 ### Startup Applications
+exec --no-startup-id dunst
 exec --no-startup-id greenclip daemon
-exec --no-startup-id ~/.local/bin/sway/start-notifyd
 exec --no-startup-id dropbox
 exec --no-startup-id fcitx -d
