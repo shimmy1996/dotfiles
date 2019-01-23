@@ -52,7 +52,7 @@ map <c-g> reload
 cmd open ${{
     case $(xdg-mime query filetype $f) in
         application/epub*|application/pdf|application/postscript|application/vnd.comicbook*|image/vnd.djvu*) nohup zathura $fx > /dev/null 2> /dev/null &;;
-        image/*) nohup imv -n $fx ./ > /dev/null 2> /dev/null &;;
+        image/*) nohup imv $fx $(fd --no-ignore-vcs -t f -d 1 . ./) > /dev/null 2> /dev/null &;;
         text/*) nohup emacsclient -c -a emacs $fx > /dev/null 2> /dev/null &;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
