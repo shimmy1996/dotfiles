@@ -37,8 +37,8 @@ map <a-w> copy
 map <c-y> paste
 
 # Emacs style search
-map <c-s> search
-map <c-r> search-back
+cmd fuzzy $lf -remote "send $id select $(fzf)"
+map <c-s> fuzzy
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
