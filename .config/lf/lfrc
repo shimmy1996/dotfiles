@@ -37,7 +37,13 @@ map <a-w> copy
 map <c-y> paste
 
 # Fuzzy search for current directory and below.
+# Only search non-hidden directories.
 map <c-s> $lf -remote "send $id select '$(fd --no-ignore-vcs -t d | fzf)'"
+# Include hidden ones.
+map <a-s> $lf -remote "send $id select '$(fd --no-ignore-vcs -H -t d | fzf)'"
+
+# Reload
+map <c-g> reload
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
