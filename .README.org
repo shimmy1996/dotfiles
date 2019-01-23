@@ -3,31 +3,50 @@
 
 An archive of core configuration files for the fabled Bipedal Inter-Galactic Mass Obliteration Device (BIGMOD).
 
-* Functional Dependencies
-Missing those may cause system to behave funny.
-| =lf=                    |
-| =mpc=                   |
-| =mpd=                   |
-| =ncmpcpp=               |
-| =i3blocks=              |
-| =acpi=                  |
-| =alsa-utils=            |
-| =alacritty=             |
-| =pass=                  |
-| =rofi-pass=             |
-| =rofi=                  |
-| =rofimoji=              |
-| =unipicker=             |
-| =tbsm= Session Chooser  |
-| =zsh=                   |
-| Adapta GTK Theme        |
-| Iosevka SS09 Font       |
-| Numix Circle Icon Theme |
-| Oxygen Sans Font        |
+* Applications of Choice
+Geared towards migration to Wayland in the long term. X11 variants also included for non-compatible ones.
 
-* Applications
-Those involved in the settings, but not crucial.
-| =nvim=    |
-| =emacs=   |
-| =fcitx=   |
-| =firefox= |
+| Usage                   | Application         |
+| Application Launcher    | =rofi=              |
+| Base16 Color Scheme     | =gruvbox-dark-pale= |
+| Clipboard               | =xclip=             |
+| Compositor (X)          | =compton=           |
+| Display Manager         | =tbsm=              |
+| Editor                  | =emacs=             |
+| File Browser            | =lf=                |
+| File Syncing            | =syncthing=         |
+| Font - Monospace        | Iosevka SS09        |
+| Font - Sans             | Oxygen-Sans         |
+| GTK Theme               | Adapta-Nokto-Eta    |
+| Icon Theme              | Numix-Circle        |
+| Image Viewer            | =imv=               |
+| Input Method            | =fcitx=             |
+| Music Player            | =mpd=, =ncmpcpp=    |
+| Notification Daemon     | =mako=              |
+| Notification Daemon (X) | =dunst=             |
+| PDF Reader              | =zathura=           |
+| Password Manager        | =pass=              |
+| Shell                   | =bash=, =fish=      |
+| Status Bar              | =i3blocks=          |
+| Terminal Emulator       | =alacritty=         |
+| Web Browser             | =firefox=           |
+| Window Manager          | =sway=              |
+| Window Manager (X)      | =i3-gaps=           |
+
+* Functional Dependencies
+Utilities used in configuration.
+
+| Function                              | Application/Package Name |
+| Battery Status                        | =acpi=                   |
+| CLI Interface to =mpd=                | =mpc=                    |
+| Emoji Picker                          | =rofimoji=               |
+| Fuzzy Search                          | =fzf=                    |
+| Integration with =pass=               | =rofi-pass=              |
+| Key Remapping                         | =xkb=                    |
+| Replacement for =find=                | =fd=                     |
+| Unicode Picker                        | =unipicker=              |
+| Unify Clipboard and Primary Selection | =greenclip=              |
+| Volume Control                        | =alsa-utils=             |
+| GTK Setting Override in Wayland       | =gsettings=              |
+| Get Backlight Level                   | =xbacklight=             |
+| Get Network ID                        | =iwgetid=                |
