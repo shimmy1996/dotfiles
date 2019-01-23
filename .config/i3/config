@@ -130,6 +130,9 @@ for_window [class="^"] split toggle
     # Emacs
     bindsym $mod+c exec --no-startup-id emacsclient -c -a emacs
 
+    # web browser
+    bindsym $mod+b exec --no-startup-id $BROWSER
+
     # emoji and unicode character picker
     bindsym $mod+u exec --no-startup-id rofimoji
     bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
@@ -277,7 +280,7 @@ mode "$mode_power" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+p mode "$mode_power"
+bindsym $mod+Shift+p mode "$mode_power"
 
 ### Startup Applications
 exec --no-startup-id dunst
