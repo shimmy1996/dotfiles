@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Inspired by LARBS (https://larbs.xyz)
+# Inspired by LARBS (https://larbs.xyz) by Luke Smith <luke@lukesmith.xyz>
+# License: GNU GPLv3
 
 [ -z "$dotfilesrepo" ] && dotfilesrepo="ssh://gitea@git.shimmy1996.com:4869/shimmy1996/dotfiles.git"
 
