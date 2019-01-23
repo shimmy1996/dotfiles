@@ -1,37 +1,38 @@
 #+Title: BIGMOD Core Configuration Files
 #+Author: Shimmy Xu
 
-An archive of core configuration files for the fabled Bipedal Inter-Galactic Mass Obliteration Device (BIGMOD).
+An archive of core configuration files for the fabled Bipedal Inter-Galactic Mass Obliteration Device (BIGMOD). A lot of motivations and ideas comes from [[https://github.com/LukeSmithxyz/voidrice][Luke Smith's]] and [[https://github.com/embik/dotfiles][Marvin Beckers']] dotfiles and [[https://suckless.org/rocks/][suckless.org]].
 
 * Applications of Choice
 Geared towards migration to Wayland in the long term. X11 variants also included for non-compatible ones.
 
-| Usage                   | Application         |
-| Application Launcher    | =rofi=              |
-| Base16 Color Scheme     | =gruvbox-dark-pale= |
-| Clipboard               | =xclip=             |
-| Compositor (X)          | =compton=           |
-| Display Manager         | =tbsm=              |
-| Editor                  | =emacs=             |
-| File Browser            | =lf=                |
-| File Syncing            | =syncthing=         |
-| Font - Monospace        | Iosevka SS09        |
-| Font - Sans             | Oxygen-Sans         |
-| GTK Theme               | Adapta-Nokto-Eta    |
-| Icon Theme              | Numix-Circle        |
-| Image Viewer            | =imv=               |
-| Input Method            | =fcitx=             |
-| Music Player            | =mpd=, =ncmpcpp=    |
-| Notification Daemon     | =mako=              |
-| Notification Daemon (X) | =dunst=             |
-| PDF Reader              | =zathura=           |
-| Password Manager        | =pass=              |
-| Shell                   | =bash=, =fish=      |
-| Status Bar              | =i3blocks=          |
-| Terminal Emulator       | =alacritty=         |
-| Web Browser             | =firefox=           |
-| Window Manager          | =sway=              |
-| Window Manager (X)      | =i3-gaps=           |
+| Usage                    | Application            |
+| Application Launcher     | =rofi=                 |
+| Base16 Color Scheme      | =gruvbox-dark-pale=    |
+| Clipboard                | =xclip=                |
+| Compositor (X)           | =compton=              |
+| Display Manager          | =tbsm=                 |
+| Editor                   | =emacs=                |
+| File Browser             | =lf=                   |
+| File Syncing             | =syncthing=, =dropbox= |
+| Font - Monospace         | Iosevka SS09           |
+| Font - Sans              | Oxygen-Sans            |
+| GTK Theme                | Adapta-Nokto-Eta       |
+| Icon Theme               | Numix-Circle           |
+| Image Viewer             | =imv=                  |
+| Input Method             | =fcitx=                |
+| Music Player             | =mpd=, =ncmpcpp=       |
+| Network Manager Frontend | =mntui=                |
+| Notification Daemon      | =mako=                 |
+| Notification Daemon (X)  | =dunst=                |
+| PDF Reader               | =zathura=              |
+| Password Manager         | =pass=                 |
+| Shell                    | =bash=, =fish=         |
+| Status Bar               | =i3blocks=             |
+| Terminal Emulator        | =alacritty=            |
+| Web Browser              | =firefox=              |
+| Window Manager           | =sway=                 |
+| Window Manager (X)       | =i3-gaps=              |
 
 * Functional Dependencies
 Utilities used in configuration.
@@ -41,12 +42,15 @@ Utilities used in configuration.
 | CLI Interface to =mpd=                | =mpc=                    |
 | Emoji Picker                          | =rofimoji=               |
 | Fuzzy Search                          | =fzf=                    |
+| GTK Setting Override in Wayland       | =gsettings=              |
+| Get Network ID                        | =iwgetid=                |
+| Get/Set Backlight Level               | =xbacklight=             |
 | Integration with =pass=               | =rofi-pass=              |
 | Key Remapping                         | =xkb=                    |
 | Replacement for =find=                | =fd=                     |
+| Screen Locker                         | =swaylock=               |
+| Screen Locker (X)                     | =i3lock=                 |
+| Set Desktop Background                | =feh=                    |
 | Unicode Picker                        | =unipicker=              |
 | Unify Clipboard and Primary Selection | =greenclip=              |
 | Volume Control                        | =alsa-utils=             |
-| GTK Setting Override in Wayland       | =gsettings=              |
-| Get Backlight Level                   | =xbacklight=             |
-| Get Network ID                        | =iwgetid=                |
