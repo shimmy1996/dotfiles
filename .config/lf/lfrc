@@ -50,10 +50,10 @@ map <c-g> reload
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
 cmd open ${{
-    case $(file --mime-type $f -b) in
-        text/*) nohup emacsclient -c -a emacs $fx > /dev/null 2> /dev/null &;;
+    case $(xdg-mime query filetype $f) in
+        application/epub*|application/pdf|application/postscript|application/vnd.comicbook*|image/vnd.djvu*) nohup zathura $fx > /dev/null 2> /dev/null &;;
         image/*) nohup imv -n $fx ./ > /dev/null 2> /dev/null &;;
-        application/pdf) nohup zathura $fx > /dev/null 2> /dev/null &;;
+        text/*) nohup emacsclient -c -a emacs $fx > /dev/null 2> /dev/null &;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
