@@ -37,7 +37,7 @@ map <a-w> copy
 map <c-y> paste
 
 # Fuzzy search for current directory and below.
-map <c-s> $lf -remote "send $id select '$(fd -I -H | fzf)'"
+map <c-s> $lf -remote "send $id select '$(fd --no-ignore-vcs -t d | fzf)'"
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
