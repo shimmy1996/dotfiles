@@ -114,5 +114,5 @@ cmd zip ${{
 }}
 
 # preview command
-set previewer ~/.config/lf/pv.sh
+set previewer ~/.local/bin/lf/previewer
 map i $~/.local/bin/lf/previewer $f | less -R
