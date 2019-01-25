@@ -20,6 +20,9 @@ set ifs "\n"
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
+# enable ANSI 256 color escape code support
+set color256 on
+
 # use enter for shell commands
 map <enter> shell
 
@@ -109,3 +112,7 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# preview command
+set previewer ~/.config/lf/pv.sh
+map i $~/.local/bin/lf/previewer $f | less -R
