@@ -23,6 +23,20 @@ set scrolloff 10
 # enable ANSI 256 color escape code support
 set color256 on
 
+# panel ratios
+cmd recol &{{
+    w=$(tput cols)
+    if [ $w -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ $w -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
+}}
+map <c-g> recol
+recol
+
 # use enter for shell commands
 map <enter> shell
 
@@ -44,9 +58,6 @@ map <c-y> paste
 map <c-s> $lf -remote "send $id select '$(fd --no-ignore-vcs -t d | fzf)'"
 # Include hidden ones.
 map <a-s> $lf -remote "send $id select '$(fd --no-ignore-vcs -H -t d | fzf)'"
-
-# Reload
-map <c-g> reload
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
