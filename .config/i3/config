@@ -137,6 +137,9 @@ for_window [class="^"] split toggle
     bindsym $mod+u exec --no-startup-id rofimoji
     bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 
+    # window switcher
+    bindsym $mod+Tab exec --no-startup-id rofi -show window
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
