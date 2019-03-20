@@ -47,6 +47,9 @@
 !.config/tbsm/tbsm.conf
 !.config/zathura
 !.config/zathura/*
+!.mozilla
+!.mozilla/firefox
+!.mozilla/firefox/user.js
 !.profile
 
 # Scripts and more.
