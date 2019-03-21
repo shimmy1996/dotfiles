@@ -6,7 +6,11 @@ if [[ `hostname` == "bluebear" ]]; then
 fi
 
 # Add `~/.local/bin/` to path.
-export PATH=$HOME/.local/bin/:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# Go settings.
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
 
 # Fcitx fixes
 export XMODIFIERS=@im=fcitx
