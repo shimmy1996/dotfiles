@@ -134,8 +134,8 @@ for_window [class="^"] split toggle
     bindsym $mod+b exec --no-startup-id $BROWSER
 
     # emoji and unicode character picker
-    bindsym $mod+u exec --no-startup-id rofimoji
-    bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
+    bindsym $mod+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy-command "xargs xdotool type"
+    bindsym $mod+Shift+u exec --no-startup-id rofimoji
 
     # window switcher
     bindsym $mod+Tab exec --no-startup-id rofi -show window
