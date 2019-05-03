@@ -9,6 +9,7 @@
 # Config files.
 !.bash_profile
 !.bashrc
+!.clang-format
 !.config
 !.config/alacritty
 !.config/alacritty/*
