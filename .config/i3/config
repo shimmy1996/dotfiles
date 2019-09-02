@@ -19,6 +19,7 @@ set $screenlocker swaylock -c 85ad8580 -u
 set $screenshot swaygrab
 set $networkmenu $TERMINAL -e nmtui
 set $file_manager $TERMINAL -e lf
+set $music_player $TERMINAL -e ncmpcpp
 ## System Commands
 set $hibernate systemctl suspend
 set $reboot systemctl reboot
@@ -120,6 +121,7 @@ for_window [class="^"] split toggle
     bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -ctrl intel_backlight -dec 10 && pkill -RTMIN+11 i3blocks
 
     # music control
+    bindsym $mod+p exec --no-startup-id $music_player
     bindsym XF86AudioPlay exec --no-startup-id mpc toggle && pkill -RTMIN+12 i3blocks
     bindsym XF86AudioPrev exec --no-startup-id mpc prev && pkill -RTMIN+12 i3blocks
     bindsym XF86AudioNext exec --no-startup-id mpc next && pkill -RTMIN+12 i3blocks
