@@ -7,7 +7,7 @@ filter() {
 
 case $BLOCK_BUTTON in
     1) mpc status | filter && setsid "$TERMINAL" -e ncmpcpp & ;;  # left click, bring up player
-    2) mpc toggle | filter ;;   # left click, nothing && pgrep -x dunst >/dev/null
+    2) mpc toggle | filter ;;   # middle click, toggle play/bause
     3) mpc status | filter && notify-send "🎵 Music module:
 - Shows mpd song playing.
 - Italic when paused.
@@ -18,3 +18,11 @@ case $BLOCK_BUTTON in
     5) mpc next   | filter ;;  # scroll down, next
     *) mpc status | filter ;;
 esac
+
+status=$(mpc status | filter)
+
+if [[ "${status}" != "" ]]; then
+    echo
+else
+    echo "NONE"
+fi
