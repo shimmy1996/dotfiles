@@ -12,6 +12,12 @@ export PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
+# Nim executables
+export PATH=$HOME/.nimble/bin:$PATH
+
+# Rust executables
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Fcitx fixes
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
