@@ -2,7 +2,6 @@
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"urlbar-container\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"toolbar-menubar\",\"TabsToolbar\",\"PersonalToolbar\"],\"currentVersion\":15,\"newElementCount\":3}");
 // Fonts.
 user_pref("font.default.x-western", "sans-serif");
-user_pref("font.minimum-size.x-western", 10);
 user_pref("font.name.monospace.x-western", "Iosevka Term SS09");
 user_pref("font.name.sans-serif.x-western", "Oxygen-Sans");
 user_pref("font.name.serif.x-western", "Oxygen-Sans");
