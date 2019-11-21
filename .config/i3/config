@@ -17,7 +17,7 @@ set $menu rofi -i -show drun
 set $clipboard rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 set $screenlocker swaylock -c 85ad8580 -u
 set $screenshot swaygrab
-set $networkmenu $TERMINAL -e nmtui
+set $networkmenu networkmanager_dmenu
 set $file_manager $TERMINAL -e lf
 set $music_player $TERMINAL -e ncmpcpp
 ## System Commands

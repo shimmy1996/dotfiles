@@ -35,6 +35,8 @@
 !.config/mpd
 !.config/mpd/mpd.conf
 !.config/mpd/playlists
+!.config/networkmanager-dmenu
+!.config/networkmanager-dmenu/*
 !.config/rofi
 !.config/rofi-pass
 !.config/rofi-pass/*
