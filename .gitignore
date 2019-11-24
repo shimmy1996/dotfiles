@@ -11,6 +11,9 @@
 !.bashrc
 !.clang-format
 !.config
+!.config/aerc
+!.config/aerc/aerc.conf
+!.config/aerc/binds.conf
 !.config/alacritty
 !.config/alacritty/*
 !.config/dunst

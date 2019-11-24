@@ -13,6 +13,7 @@ Geared towards migration to Wayland in the long term. X11 variants also included
 | Compositor (X)           | =compton=              |
 | Display Manager          | =tbsm=                 |
 | Editor                   | =emacs=                |
+| Email Client             | =aerc=                 |
 | File Browser             | =lf=                   |
 | File Syncing             | =syncthing=, =dropbox= |
 | Font - Monospace         | Iosevka SS09           |
