@@ -22,7 +22,7 @@ Geared towards migration to Wayland in the long term. X11 variants also included
 | Image Viewer             | =imv=                  |
 | Input Method             | =fcitx=                |
 | Music Player             | =mpd=, =ncmpcpp=       |
-| Network Manager Frontend | =mntui=                |
+| Network Manager Frontend | =networkmanager-dmenu= |
 | Notification Daemon      | =mako=                 |
 | Notification Daemon (X)  | =dunst=                |
 | PDF Reader               | =zathura=              |
