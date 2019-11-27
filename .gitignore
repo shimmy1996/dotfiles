@@ -53,6 +53,8 @@
 !.config/systemd/user/emacs.service.d/override.conf
 !.config/tbsm
 !.config/tbsm/tbsm.conf
+!.config/urlscan
+!.config/urlscan/*
 !.config/zathura
 !.config/zathura/*
 !.mozilla
