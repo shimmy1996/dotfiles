@@ -13,6 +13,11 @@ user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.urlbar.suggest.bookmark", true);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.openpage", false);
+// Enable picture-in-picture.
+user_pref("media.videocontrols.picture-in-picture.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.flyout-enabled", true);
 // Newtab page.
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
