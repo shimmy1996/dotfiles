@@ -20,6 +20,8 @@
 !.config/dunst/*
 !.config/environment.d
 !.config/environment.d/*
+!.config/fcitx
+!.config/fcitx/config
 !.config/git
 !.config/git/*
 !.config/greenclip.cfg
