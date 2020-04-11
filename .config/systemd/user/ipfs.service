@@ -1,0 +1,10 @@
+[Unit]
+Description=IPFS daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ipfs daemon --mount
+Restart=always
+
+[Install]
+WantedBy=multiuser.target

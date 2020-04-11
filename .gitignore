@@ -51,6 +51,7 @@
 !.config/systemd
 !.config/systemd/
 !.config/systemd/user
+!.config/systemd/user/ipfs.service
 !.config/systemd/user/emacs.service.d
 !.config/systemd/user/emacs.service.d/override.conf
 !.config/tbsm
