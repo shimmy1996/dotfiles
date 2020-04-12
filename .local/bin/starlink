@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Replaces files in given directory with IPFS symlinks.
+find "$1" -type f -exec \
+     sh -c 'ipfs add -q "{}" | xargs -I@ ln -sf /ipfs/@ "{}"' \;
