@@ -93,7 +93,7 @@ for_window [class="^"] split toggle
     bindsym $mod+Escape exec --no-startup-id $screenlocker
 
     # start a terminal
-    bindsym $mod+Return exec --no-startup-id ~/.local/bin/sway/launch-terminal
+    bindsym $mod+Return exec --no-startup-id $TERMINAL
 
     # kill focused window, remember to toggle split back
     bindsym $mod+q split toggle; kill
