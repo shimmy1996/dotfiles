@@ -2,9 +2,15 @@
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"urlbar-container\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"toolbar-menubar\",\"TabsToolbar\",\"PersonalToolbar\"],\"currentVersion\":15,\"newElementCount\":3}");
 // Fonts.
 user_pref("font.default.x-western", "sans-serif");
+user_pref("font.name.monospace.ja", "Iosevka Term SS09");
 user_pref("font.name.monospace.x-western", "Iosevka Term SS09");
+user_pref("font.name.monospace.zh-CN", "Iosevka Term SS09");
+user_pref("font.name.sans-serif.ja", "Noto Sans CJK JP");
 user_pref("font.name.sans-serif.x-western", "Oxygen-Sans");
-user_pref("font.name.serif.x-western", "Oxygen-Sans");
+user_pref("font.name.sans-serif.zh-CN", "Noto Sans CJK SC");
+user_pref("font.name.serif.ja", "Noto Serif CJK JP");
+user_pref("font.name.serif.x-western", "Noto Serif");
+user_pref("font.name.serif.zh-CN", "Noto Serif CJK SC");
 // Search engine and urlbar.
 user_pref("browser.search.update", false);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
