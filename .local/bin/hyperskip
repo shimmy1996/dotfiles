@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+import argparse
+import datetime
+import hashlib
+import sys
+import urllib.parse
+
+
+def parse_comment(lines):
+    """Takes in a email file and outputs the comment
+    """
+    comment = {}
+    for i, line in enumerate(lines):
+        if line.startswith("Subject:"):
+            comment["uri"] = line.replace("Subject: RE:", "").strip()
+        elif line.startswith("From:"):
+            email = line.replace("From: ", "").replace(">", "").split(" <")[1].strip()
+            comment["email_hash"] = hashlib.sha256(str.encode(email)).hexdigest()[-10:]
+        elif line.startswith("Date:"):
+            # Expected format: Sun, 5 Apr 2020 21:38:47 -0500
+            comment["time"] = datetime.datetime.strptime(
+                line.replace("Date: ", "").strip(), "%a, %d %b %Y %H:%M:%S %z"
+            ).isoformat()
+        elif line.startswith("name="):
+            full_content = line
+            # Stop at first empty line
+            while line.strip():
+                i += 1
+                if i >= len(lines):
+                    break
+                line = lines[i]
+                full_content += line
+            # Get rid of line concatination and Gmail's "=3D"
+            full_content = (
+                full_content.replace("=3D", "=").replace("\r", "").replace("=\n", "")
+            )
+            name, content = full_content.split("&")
+            comment["name"] = name.split("=")[1]
+            comment["content"] = urllib.parse.unquote_plus(content.split("=")[1])
+    return comment
+
+
+def print_to_toml(comment):
+    """Print comment to TOML format
+    """
+    print("[[comments]]")
+    for key in ["name", "email_hash", "time", "uri"]:
+        if key == "time":
+            print(f"{key} = {comment[key]}")
+        else:
+            print(f'{key} = "{comment[key]}"')
+    print(f'content = """\n{comment["content"].strip()}\n"""')
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Convert Hyperskip formatted email to compatible TOML format"
+    )
+    parser.add_argument(
+        "infile", nargs="?", type=argparse.FileType("r"), default=sys.stdin
+    )
+    args = parser.parse_args()
+    print_to_toml(parse_comment(args.infile.readlines()))
