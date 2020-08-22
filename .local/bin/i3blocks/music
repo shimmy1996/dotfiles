@@ -6,7 +6,7 @@ filter() {
 }
 
 case $BLOCK_BUTTON in
-    1) mpc status | filter && setsid "$TERMINAL" -e ncmpcpp & ;;  # left click, bring up player
+    1) mpc status | filter && setsid "$TERMINAL" -e ncmpcpp ;;  # left click, bring up player
     2) mpc toggle | filter ;;   # middle click, toggle play/bause
     3) mpc status | filter && notify-send "🎵 Music module:
 - Shows mpd song playing.
