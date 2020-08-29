@@ -29,6 +29,9 @@ export BROWSER="firefox"
 export EDITOR="emacsclient"
 export VISUAL="emacsclient"
 
+# NETHACK config
+export NETHACKOPTIONS="@$HOME/.config/nethack/nethackrc"
+
 # fzf color scheme.
 _gen_fzf_default_opts() {
     local color00='#262626'

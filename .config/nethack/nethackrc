@@ -1,0 +1,33 @@
+# UI
+OPTIONS=windowtype:curses,perm_invent,showexp,time,hitpointbar,lit_corridor,dark_room,use_darkgray
+OPTIONS=statushilites:10
+OPTIONS=HILITE_STATUS: hunger/Hungry/brown/Weak/red/Fainting/orange&blink
+OPTIONS=HILITE_STATUS: carrying-capacity/Burdened/brown/Stressed/red/Strained/orange/Overtaxed/bright-red/Overloaded/gray&inverse
+
+# Conditions: Major Troubles
+OPTIONS=HILITE_STATUS: condition/stone/red&inverse/termill/red&inverse
+OPTIONS=HILITE_STATUS: condition/strngl/red&inverse
+OPTIONS=HILITE_STATUS: condition/foodpois/red&inverse/slime/red&inverse
+
+# Conditions: Minor Troubles
+OPTIONS=HILITE_STATUS: condition/blind/yellow/deaf/yellow
+OPTIONS=HILITE_STATUS: condition/stun/yellow
+OPTIONS=HILITE_STATUS: condition/conf/yellow/hallu/bright-magenta
+
+OPTIONS=HILITE_STATUS: hitpoints/<=100%/bright-green/<=99%/green
+OPTIONS=HILITE_STATUS: hitpoints/<=80%/yellow/<=60%/brown/<=40%/orange/<=20%/bright-red&inverse
+OPTIONS=HILITE_STATUS: power/<=100%/bright-cyan/<=80%/cyan
+OPTIONS=HILITE_STATUS: power/<=60%/bright-blue/<=40%/blue/<=20%/magenta
+OPTIONS=HILITE_STATUS: hitpoints-max/always/green/up/bright-green/down/orange
+OPTIONS=HILITE_STATUS: power-max/always/cyan/up/bright-cyan/down/bright-blue
+
+OPTIONS=menucolors
+
+# Enhance
+MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
+
+# Auto pickup only items considered "generally safe":
+# gold, scrolls, potions, wands, rings, amulets, and spellbooks.
+OPTIONS=autopickup, pickup_types:$?!/="+
+# But don't pickup a scroll of scare monster
+AUTOPICKUP_EXCEPTION=">scroll of scare monster"
