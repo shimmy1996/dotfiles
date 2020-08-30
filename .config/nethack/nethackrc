@@ -1,33 +1,151 @@
-# UI
-OPTIONS=windowtype:curses,perm_invent,showexp,time,hitpointbar,lit_corridor,dark_room,use_darkgray
-OPTIONS=statushilites:10
-OPTIONS=HILITE_STATUS: hunger/Hungry/brown/Weak/red/Fainting/orange&blink
-OPTIONS=HILITE_STATUS: carrying-capacity/Burdened/brown/Stressed/red/Strained/orange/Overtaxed/bright-red/Overloaded/gray&inverse
+# Gameplay
+OPTIONS=!bones
+OPTIONS=!mail
+## For conducts
+# OPTIONS=blind
+# OPTIONS=nudist
+# OPTIONS=pettype:none
 
-# Conditions: Major Troubles
-OPTIONS=HILITE_STATUS: condition/stone/red&inverse/termill/red&inverse
-OPTIONS=HILITE_STATUS: condition/strngl/red&inverse
-OPTIONS=HILITE_STATUS: condition/foodpois/red&inverse/slime/red&inverse
+# Naming
+OPTIONS=catname:Claudia
+OPTIONS=dogname:Meatball
+OPTIONS=horsename:Pirate
+OPTIONS=fruit:granola bar
 
-# Conditions: Minor Troubles
-OPTIONS=HILITE_STATUS: condition/blind/yellow/deaf/yellow
-OPTIONS=HILITE_STATUS: condition/stun/yellow
-OPTIONS=HILITE_STATUS: condition/conf/yellow/hallu/bright-magenta
+# Graphics
+OPTIONS=windowtype:tty
+OPTIONS=symset:DECgraphics
 
-OPTIONS=HILITE_STATUS: hitpoints/<=100%/bright-green/<=99%/green
-OPTIONS=HILITE_STATUS: hitpoints/<=80%/yellow/<=60%/brown/<=40%/orange/<=20%/bright-red&inverse
-OPTIONS=HILITE_STATUS: power/<=100%/bright-cyan/<=80%/cyan
-OPTIONS=HILITE_STATUS: power/<=60%/bright-blue/<=40%/blue/<=20%/magenta
-OPTIONS=HILITE_STATUS: hitpoints-max/always/green/up/bright-green/down/orange
-OPTIONS=HILITE_STATUS: power-max/always/cyan/up/bright-cyan/down/bright-blue
+# Menu Navigation
+OPTIONS=!cmdassist
+OPTIONS=force_invmenu
+OPTIONS=extmenu
+OPTIONS=menustyle:full
+OPTIONS=menu_objsyms
+## tty only
+OPTIONS=msg_window:full
+OPTIONS=msghistory:40
+## curses only
+OPTIONS=perm_invent
 
-OPTIONS=menucolors
+# Control
+OPTIONS=pushweapon
+OPTIONS=!autodig
+OPTIONS=autoquiver
+OPTIONS=autoopen
+OPTIONS=autopickup
+OPTIONS=!pickup_thrown
+OPTIONS=pickup_burden:U
 
-# Enhance
-MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
-
-# Auto pickup only items considered "generally safe":
-# gold, scrolls, potions, wands, rings, amulets, and spellbooks.
-OPTIONS=autopickup, pickup_types:$?!/="+
-# But don't pickup a scroll of scare monster
+## Autopickup: gold, scrolls, potions, wands, rings, amulets, spellbooks, and food.
+OPTIONS=pickup_types:$?!/="+%
+### Scrolls
 AUTOPICKUP_EXCEPTION=">scroll of scare monster"
+AUTOPICKUP_EXCEPTION=">scroll called scare monster"
+### Wands
+AUTOPICKUP_EXCEPTION=">wand named empty"
+AUTOPICKUP_EXCEPTION=">wand .*:0)"
+### Corpses
+AUTOPICKUP_EXCEPTION="> corpse"
+AUTOPICKUP_EXCEPTION="> glob"
+AUTOPICKUP_EXCEPTION="<lichen corpse"
+AUTOPICKUP_EXCEPTION="<floating eye corpse"
+AUTOPICKUP_EXCEPTION="<wraith corpse"
+### Gems
+AUTOPICKUP_EXCEPTION="< luckstone"
+AUTOPICKUP_EXCEPTION="< stone called luck"
+### Special Names
+AUTOPICKUP_EXCEPTION="<.* named ammo"
+AUTOPICKUP_EXCEPTION="<.* named autopickup"
+
+# UI
+OPTIONS=menucolors
+OPTIONS=standout
+OPTIONS=!implicit_uncursed
+
+## Map
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+OPTIONS=lit_corridor
+OPTIONS=dark_room
+
+## Status Bar
+OPTIONS=time
+OPTIONS=showexp
+OPTIONS=hitpointbar
+OPTIONS=statuslines:3
+OPTIONS=statushilites:10
+
+### Status Highlights
+OPTIONS=hilite_status:characteristics/up/lightgreen/down/orange
+OPTIONS=hilite_status:hitpoints/100%/lightgreen/<100%/green/<=80%/yellow/<=60%/brown/<=40%/orange/<=20%/red&inverse
+OPTIONS=hilite_status:power/100%/lightcyan/<100%/cyan/<=80%/lightblue/<=60%/blue/<=40%/lightmagenta/<=20%/magenta&inverse
+OPTIONS=hilite_status:hitpoints-max/up/lightgreen/down/orange
+OPTIONS=hilite_status:power-max/up/lightcyan/down/lightmagenta
+OPTIONS=hilite_status:armor-class/down/lightgreen/up/orange
+OPTIONS=hilite_status:experience-level/up/lightgreen/down/orange
+OPTIONS=hilite_status:gold/always/yellow
+
+OPTIONS=hilite_status:carrying-capacity/Burdened/brown/Stressed/red/Strained/orange/Overtaxed/orange/Overloaded/gray&inverse
+OPTIONS=hilite_status:hunger/Hungry/brown/Weak/red/Fainting/orange
+
+#### Conditions: Major Troubles
+OPTIONS=hilite_status:condition/stone/red&inverse
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/strngl/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+#### Conditions: Minor Troubles
+OPTIONS=hilite_status:condition/blind/yellow
+OPTIONS=hilite_status:condition/deaf/yellow
+OPTIONS=hilite_status:condition/stun/yellow
+OPTIONS=hilite_status:condition/hallu/lightmagenta
+OPTIONS=hilite_status:condition/conf/yellow
+
+#### Conditions: Movements
+OPTIONS=hilite_status:condition/fly/lightblue
+OPTIONS=hilite_status:condition/lev/lightblue
+OPTIONS=hilite_status:condition/ride/lightblue
+
+## Menu Color
+
+### Gold
+MENUCOLOR=" gold piece"=yellow
+
+### Item BUC Status
+MENUCOLOR=" holy "=cyan
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=magenta
+#### Holy/Unholy Water
+MENUCOLOR="blessed clear potion(s)?"=lightcyan
+MENUCOLOR="blessed potion(s)? called water"=lightcyan
+MENUCOLOR="cursed clear potion(s)?"=magenta
+MENUCOLOR="cursed potion(s)? called water"=magenta
+
+### Items in Use
+MENUCOLOR="\((weapon in|wielded|alternate weapon|in quiver|at the ready|being worn|embedded in your skin|on left|on right|in use|lit).*\)"=white&underline
+MENUCOLOR="tethered"=white&underline
+#### Blessed
+MENUCOLOR=" blessed .* \((weapon in|wielded|alternate weapon|in quiver|at the ready|being worn|embedded in your skin|on left|on right|in use|lit).*\)"=lightgreen&underline
+MENUCOLOR=" blessed .* tethered"=lightgreen&underline
+#### Cursed
+MENUCOLOR=" cursed .* \((weapon in|wielded|alternate weapon|in quiver|at the ready|being worn|embedded in your skin|on left|on right|in use|lit).*\)"=orange&underline
+MENUCOLOR=" cursed .* tethered"=orange&underline
+
+### Food
+#### Vegan
+MENUCOLOR="(food |cram |K-|C-)(ration|gunyoki)"=lightgreen
+MENUCOLOR="lembas wafer"=lightgreen
+MENUCOLOR=" (apple|banana|pear|melon|carrot|orange)s?$"=lightgreen
+MENUCOLOR="granola bar"=lightgreen
+MENUCOLOR="wolfsbane|garlic|eucalyptus|kelp"=lightgreen
+MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=lightgreen
+MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=lightgreen
+MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=lightgreen
+#### Vegatarian
+MENUCOLOR="pancake|fortune cookie|candy bar|cream pie"=green
+MENUCOLOR="egg|royal jelly"=green
+MENUCOLOR="wax candle"=green
+MENUCOLOR="(tin of )?brown pudding|gray ooze( corpse)?"=green
