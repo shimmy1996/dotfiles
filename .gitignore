@@ -56,8 +56,7 @@
 !.config/systemd/user/ipfs.service
 !.config/systemd/user/mbsync.service
 !.config/systemd/user/mbsync.timer
-!.config/systemd/user/emacs.service.d
-!.config/systemd/user/emacs.service.d/override.conf
+!.config/systemd/user/emacs.service
 !.config/tbsm
 !.config/tbsm/tbsm.conf
 !.config/urlscan
