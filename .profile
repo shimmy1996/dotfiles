@@ -9,6 +9,7 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 # Go settings.
+export GO111MODULE=on
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
@@ -22,6 +23,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
+
+# Picard Fixes
+export QT_FONT_DPI=96
 
 # Preferred applications
 export TERMINAL="alacritty"
