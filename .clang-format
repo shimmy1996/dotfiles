@@ -1,19 +1,152 @@
 ---
 Language: Cpp
-BasedOnStyle: Google
-
-AllowShortFunctionsOnASingleLine: Empty
-BreakBeforeBinaryOperators: NonAssignment
-DerivePointerAlignment: false
-IncludeBlocks: Regroup
-IncludeCategories:
-  - Regex:      '^".*'
-    Priority:   1
-  - Regex:      '^<.*/.*>'
-    Priority:   2
-  - Regex:      '^<[^/]*\.h>'
-    Priority:   4
-  - Regex:      '^<[^/]*>'
-    Priority:   3
-ReflowComments: false
+AccessModifierOffset: -2 # consistent with case labels
+AlignAfterOpenBracket: Align # one param per line, looks bad for auto fn() -> TYPE {} though.
+AlignConsecutiveMacros: false #
+AlignConsecutiveAssignments: false #
+AlignConsecutiveBitFields: false #
+AlignConsecutiveDeclarations: false #
+AlignEscapedNewlines: Right #
+AlignOperands: AlignAfterOperator # looks better and saves space
+AlignTrailingComments: false #
+AllowAllArgumentsOnNextLine: false # one per line
+AllowAllConstructorInitializersOnNextLine: false # one per line
+AllowAllParametersOfDeclarationOnNextLine: false # one per line
+AllowShortEnumsOnASingleLine: false # one per line
+AllowShortBlocksOnASingleLine: Empty # minimize diff
+AllowShortCaseLabelsOnASingleLine: false # one per line
+AllowShortFunctionsOnASingleLine: Empty #
+AllowShortLambdasOnASingleLine: All #
+AllowShortIfStatementsOnASingleLine: Never # always have braces
+AllowShortLoopsOnASingleLine: false #
+AlwaysBreakAfterReturnType: None #
+AlwaysBreakBeforeMultilineStrings: false #
+AlwaysBreakTemplateDeclarations: Yes #
+BinPackArguments: false # one per line
+BinPackParameters: false # one per line
+BreakBeforeBraces: Attach #
+BraceWrapping: # not in effect
+  AfterCaseLabel: false
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterObjCDeclaration: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: false
+  BeforeElse: false
+  BeforeLambdaBody: false
+  BeforeWhile: false
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: NonAssignment # so that = and {} init look the same when split
+BreakInheritanceList: AfterColon # less indention, look distinct from both labels and tenrary
+BreakBeforeTernaryOperators: true #
+BreakConstructorInitializers: AfterColon # less indention, look distinct from both labels and tenrary
+BreakStringLiterals: false # makes searching hard
+ColumnLimit: 80 # debatible, but should be plenty as we indent 2 spaces
+CommentPragmas: '^ IWYU pragma:' # to be added
+CompactNamespaces: false #
+ConstructorInitializerAllOnOneLineOrOnePerLine: true # one per line
+ConstructorInitializerIndentWidth: 2 #
+ContinuationIndentWidth: 4 # differentiate parameter list from body
+Cpp11BracedListStyle: true #
+DeriveLineEnding: true #
+DerivePointerAlignment: false #
+DisableFormat: false #
+ExperimentalAutoDetectBinPacking: false #? experimental
+FixNamespaceComments: true #
+ForEachMacros: #? TBD
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IncludeBlocks: Regroup #
+IncludeCategories: #
+    # C stdlib headers
+  - Regex: '^<(assert\.h|complex\.h|ctype\.h|errno\.h|fenv\.h|float\.h|inttypes\.h|iso646\.h|limits\.h|locale\.h|math\.h|setjmp\.h|signal\.h|stdalign\.h|stdarg\.h|stdatomic\.h|stdbool\.h|stddef\.h|stdint\.h|stdio\.h|stdlib\.h|stdnoreturn\.h|string\.h|tgmath\.h|threads\.h|time\.h|uchar\.h|wchar\.h|wctype\.h)>'
+    Priority: 6
+    # C compatibility headers
+  - Regex: '^<(cassert|cctype|cerrno|cfenv|cfloat|cinttypes|climits|clocale|cmath|csetjmp|csignal|cstdarg|cstddef|cstdint|cstdio|cstdlib|cstring|ctime|cuchar|cwchar|cwctype)>$'
+    Priority: 5
+    # C++ stdlib headers
+  - Regex: '^<(algorithm|any|array|atomic|barrier|bit|bitset|charconv|chrono|codecvt|compare|complex|concepts|condition_variable|coroutine|deque|exception|execution|filesystem|format|forward_list|fstream|functional|future|initializer_list|iomanip|ios|iosfwd|iostream|istream|iterator|latch|limits|list|locale|map|memory|memory_resource|mutex|new|numbers|numeric|optional|ostream|queue|random|ranges|ratio|regex|scoped_allocator|semaphore|set|shared_mutex|source_location|span|sstream|stack|stdexcept|stop_token|streambuf|string|string_view|strstream|syncstream|system_error|thread|tuple|type_traits|typeindex|typeinfo|unordered_map|unordered_set|utility|valarray|variant|vector|version)>$'
+    Priority: 4
+    # Other system headers
+  - Regex: '^<.*>'
+    Priority: 3
+    # Project headers in other locations
+  - Regex: '^".*/.*"'
+    Priority: 2
+    # Project headers in the same location
+  - Regex: '^".*"'
+    Priority: 1
+IncludeIsMainRegex: '(Test)?$' #? TBD
+IncludeIsMainSourceRegex: '' #
+IndentCaseLabels: false #
+IndentCaseBlocks: false #
+IndentGotoLabels: true #
+IndentPPDirectives: AfterHash #
+IndentExternBlock: Indent #? TBD
+IndentWidth: 2 #
+IndentWrappedFunctionNames: false #
+# InsertTrailingCommas: Wrapped #? JavaScript
+# JavaScriptQuotes: Leave #? JavaScript
+# JavaScriptWrapImports: true #? JavaScript
+KeepEmptyLinesAtTheStartOfBlocks: false #
+MacroBlockBegin: '' #? TBD
+MacroBlockEnd: '' #? TBD
+MaxEmptyLinesToKeep: 1 #
+NamespaceIndentation: None #
+# ObjCBinPackProtocolList: Auto #? Objective C
+# ObjCBlockIndentWidth: 2 #? Objective C
+# ObjCBreakBeforeNestedBlockParam: true #? Objective C
+# ObjCSpaceAfterProperty: false #? Objective C
+# ObjCSpaceBeforeProtocolList: true #? Objective C
+PenaltyBreakAssignment: 2 #?
+PenaltyBreakBeforeFirstCallParameter: 19 #?
+PenaltyBreakComment: 300 #?
+PenaltyBreakFirstLessLess: 120 #?
+PenaltyBreakString: 1000 #?
+PenaltyBreakTemplateDeclaration: 10 #?
+PenaltyExcessCharacter: 1000000 #?
+PenaltyReturnTypeOnItsOwnLine: 60 #?
+PointerAlignment: Left # separate type and identifier
+ReflowComments: true #
+SortIncludes: true #
+SortUsingDeclarations: true #
+SpaceAfterCStyleCast: true # like rust's "as"
+SpaceAfterLogicalNot: false #
+SpaceAfterTemplateKeyword: true #
+SpaceBeforeAssignmentOperators: true #
+SpaceBeforeCpp11BracedList: false # looks bad for empty init list
+SpaceBeforeCtorInitializerColon: true #
+SpaceBeforeInheritanceColon: true #
+SpaceBeforeParens: ControlStatementsExceptForEachMacros #
+SpaceBeforeRangeBasedForLoopColon: true #
+SpaceInEmptyBlock: false #
+SpaceInEmptyParentheses: false #
+SpacesBeforeTrailingComments: 2 #
+SpacesInAngles: false #
+SpacesInConditionalStatement: false #
+SpacesInContainerLiterals: true #
+SpacesInCStyleCastParentheses: false #
+SpacesInParentheses: false #
+SpacesInSquareBrackets: false   #
+SpaceBeforeSquareBrackets: false #
+Standard: Latest #
+StatementMacros: #? TBD
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+TabWidth: 2 # same as indent
+UseCRLF: false #
+UseTab: Never #
+WhitespaceSensitiveMacros: #? TBD
+  - STRINGIZE
+  - PP_STRINGIZE
+  - BOOST_PP_STRINGIZE
 ...
